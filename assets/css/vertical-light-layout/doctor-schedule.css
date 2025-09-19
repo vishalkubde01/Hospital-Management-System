@@ -1,0 +1,158 @@
+
+
+/* --- Form Card --- */
+.form-card {
+  max-width: 100%;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+ 
+  overflow: hidden;
+}
+
+/* --- Header --- */
+.form-header {
+  background-color: #01c0c8;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+.form-header i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.form-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* --- Form Body --- */
+.form-body {
+  padding: 25px;
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.form-group {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+.form-group label .required {
+  color: red;
+}
+
+/* --- Inputs --- */
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  
+  background-color: #fff;
+}
+.form-control:focus {
+  border-color: #03a9f3;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(3, 169, 243, 0.25);
+}
+
+/* --- Checkboxes --- */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 8px;
+}
+.checkbox-group label {
+  font-weight: normal;
+}
+
+/* --- Radio buttons --- */
+.radio-group {
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+}
+.radio-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.radio-item input[type="radio"] {
+  margin-right: 6px;
+}
+
+/* --- Error messages --- */
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* --- Footer --- */
+.form-footer {
+  background-color: #f8f9fa;
+  padding: 15px 25px;
+  text-align: right;
+  border-top: 1px solid #e0e0e0;
+}
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn-reset {
+  background-color: #6c757d;
+  color: #fff;
+  margin-right: 10px;
+}
+.btn-reset:hover {
+  background-color: #5a6268;
+}
+.btn-save {
+  background-color: #28a745;
+  color: #fff;
+}
+.btn-save:hover {
+  background-color: #218838;
+}
+
+/* --- Responsive --- */
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .form-footer {
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .btn-reset {
+    margin-right: 0;
+  }
+}
+
+ 

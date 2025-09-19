@@ -1,0 +1,56 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.form-section {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.form-header,
+.medicine-header {
+    background: #0dcaf0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.form-header i,
+.medicine-header i {
+    margin-right: 8px;
+}
+
+.form-body {
+    padding: 20px;
+}
+
+.add-btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.add-btn:hover {
+    color: #0056b3;
+}
+
+#medicineTable th,
+#medicineTable td {
+    vertical-align: middle;
+}
+
+#medicineTable input {
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.medicine-header {
+    margin-bottom: 10px;
+}

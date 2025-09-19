@@ -1,0 +1,1820 @@
+<!-- add 3 fields User-Name , Set Net Pass and Country(by default select in INDIA) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Hospital Management System</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="assets/vendors/simple-line-icons/css/simple-line-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/flag-icon-css/css/flag-icons.min.css"
+    />
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css" />
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link
+      rel="stylesheet"
+      href="assets/vendors/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/jvectormap/jquery-jvectormap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/daterangepicker/daterangepicker.css"
+    />
+    <link rel="stylesheet" href="assets/vendors/chartist/chartist.min.css" />
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/vertical-light-layout/style.css" />
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/logo-mini.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap4.min.css"
+    />
+    <link rel="stylesheet" href="Prescription-Table.css" />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/b475359de1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Arial, sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+      }
+      .form-card {
+        max-width: 100%;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .form-header {
+        background-color: #01b6be;
+        color: #fff;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+      }
+      .form-header i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+      .form-header h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .form-body {
+        padding: 25px;
+      }
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+      .form-group {
+        padding: 0 10px;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+      .form-group label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+      }
+      .form-control,
+      textarea.form-control {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+      .form-control:focus {
+        border-color: #03a9f3;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(3, 169, 243, 0.25);
+      }
+      .form-footer {
+        background-color: #f8f9fa;
+        padding: 15px 25px;
+        text-align: right;
+        border-top: 1px solid #e0e0e0;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.2s;
+      }
+      .btn-reset {
+        background-color: #6c757d;
+        color: white;
+        margin-right: 10px;
+      }
+      .btn-reset:hover {
+        background-color: #5a6268;
+      }
+      .btn-save {
+        background-color: #28a745;
+        color: white;
+      }
+      .btn-save:hover {
+        background-color: #218838;
+      }
+      .error {
+        color: red;
+        font-size: 0.8rem;
+        margin-top: 4px;
+      }
+      @media (min-width: 768px) {
+        .col-md-6 {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+        .col-md-12 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        .col-md-3 {
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+      }
+      @media (max-width: 480px) {
+        .form-footer {
+          text-align: center;
+        }
+        .btn {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .btn-reset {
+          margin-right: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav
+        class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row"
+      >
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+        >
+          <a class="navbar-brand brand-logo" href="index.html">
+            <img
+              src="assets/images/logo-main.png"
+              alt="logo"
+              class="logo-dark"
+            />
+            <img
+              src="assets/images/logo-light.svg"
+              alt="logo-light"
+              class="logo-light"
+            />
+          </a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"
+            ><img src="assets/images/logo-mini.png" alt="logo"
+          /></a>
+          <button
+            class="navbar-toggler navbar-toggler align-self-center"
+            type="button"
+            data-bs-toggle="minimize"
+          >
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+        <div
+          class="navbar-menu-wrapper d-flex align-items-center"
+          style="background-color: #01c0c8"
+        >
+          <h5 class="mb-0 font-weight-medium d-none d-lg-flex">
+            Welcome Admin
+          </h5>
+          <ul class="navbar-nav navbar-nav-right">
+            <form class="search-form d-none d-md-block" action="#">
+              <i class="icon-magnifier"></i>
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search Here"
+                title="Search here"
+              />
+            </form>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link"><i class="icon-envelope"></i></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link count-indicator message-dropdown"
+                id="messageDropdown"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="icon-speech"></i>
+                <span class="count">7</span>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+                aria-labelledby="messageDropdown"
+              >
+                <a class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-start me-2">
+                    You have 7 unread mails
+                  </p>
+                  <span class="badge badge-pill badge-primary float-end"
+                    >View all</span
+                  >
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img
+                      src="assets/images/faces/face10.jpg"
+                      alt="image"
+                      class="img-sm profile-pic"
+                    />
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p
+                      class="preview-subject ellipsis font-weight-medium text-dark"
+                    >
+                      Marian Garner
+                    </p>
+                    <p class="font-weight-light small-text">
+                      The meeting is cancelled
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img
+                      src="assets/images/faces/face12.jpg"
+                      alt="image"
+                      class="img-sm profile-pic"
+                    />
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p
+                      class="preview-subject ellipsis font-weight-medium text-dark"
+                    >
+                      David Grey
+                    </p>
+                    <p class="font-weight-light small-text">
+                      The meeting is cancelled
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img
+                      src="assets/images/faces/face1.jpg"
+                      alt="image"
+                      class="img-sm profile-pic"
+                    />
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p
+                      class="preview-subject ellipsis font-weight-medium text-dark"
+                    >
+                      Travis Jenkins
+                    </p>
+                    <p class="font-weight-light small-text">
+                      The meeting is cancelled
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="UserDropdown"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  class="img-xs rounded-circle ms-2"
+                  src="assets/images/profile-icon.jpg"
+                  alt="Profile image"
+                />
+                <span class="font-weight-normal"> Admin </span></a
+              >
+              <div
+                class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                aria-labelledby="UserDropdown"
+              >
+                <div class="dropdown-header text-center">
+                  <img
+                    class="img-md rounded-circle"
+                    src="assets/images/profile-icon1.png"
+                    alt="Profile image"
+                  />
+                  <p class="mb-1 mt-3">Admin</p>
+                  <p class="font-weight-light text-muted mb-0">
+                    admin@gmail.com
+                  </p>
+                </div>
+                <a class="dropdown-item"
+                  ><i class="dropdown-item-icon icon-user text-primary"></i> My
+                  Profile
+                  <span class="badge badge-pill badge-danger">1</span></a
+                >
+                <a class="dropdown-item"
+                  ><i class="dropdown-item-icon icon-speech text-primary"></i>
+                  Messages</a
+                >
+                <a class="dropdown-item"
+                  ><i class="dropdown-item-icon icon-energy text-primary"></i>
+                  Activity</a
+                >
+                <a class="dropdown-item"
+                  ><i class="dropdown-item-icon icon-question text-primary"></i>
+                  FAQ</a
+                >
+                <a class="dropdown-item"
+                  ><i class="dropdown-item-icon icon-power text-primary"></i
+                  >Sign Out</a
+                >
+              </div>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-bs-toggle="offcanvas"
+          >
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item navbar-brand-mini-wrapper mt-3">
+              <a class="nav-link navbar-brand brand-logo-mini" href="index.html"
+                ><img src="assets/images/logo-mini.png" alt="logo"
+              /></a>
+            </li>
+            <!-- ################## -->
+            <li class="nav-item nav-category">
+              <span class="nav-link"></span>
+            </li>
+            <!-- ################## -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <span class="menu-title">Dashboard</span>
+                <i class="fa fa-tachometer-alt menu-icon"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#ui-basic"
+                aria-expanded="false"
+                aria-controls="ui-basic"
+              >
+                <span class="menu-title">Human Resources</span>
+                <i class="fa fa-users menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="sample-page.html">Add Employee</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Employee</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#icons"
+                aria-expanded="false"
+                aria-controls="icons"
+              >
+                <span class="menu-title">Departments</span>
+                <i class="fa fa-building menu-icon"></i>
+              </a>
+              <div class="collapse" id="icons" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add Department</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Departments </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#forms"
+                aria-expanded="false"
+                aria-controls="forms"
+              >
+                <span class="menu-title">Doctor</span>
+                <i class="fa fa-user-md menu-icon"></i>
+              </a>
+              <div class="collapse" id="forms" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add Doctor</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">View Doctor’s List </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#charts"
+                aria-expanded="false"
+                aria-controls="charts"
+              >
+                <span class="menu-title"> Patient Management</span>
+                <i class="fa fa-procedures menu-icon"></i>
+              </a>
+              <div class="collapse" id="charts" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <!-- OPD Management -->
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#opdMenu"
+                      aria-expanded="false"
+                      aria-controls="opdMenu"
+                    >
+                      OPD Management
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="opdMenu"
+                      data-bs-parent="#charts"
+                      style="list-style: none"
+                    >
+                      <li><a href="#" class="nav-link">Add Patients</a></li>
+                      <li><a href="#" class="nav-link">View Patients</a></li>
+                      <li>
+                        <a href="#" class="nav-link">Add Prescriptions</a>
+                      </li>
+                      <li><a href="#" class="nav-link">Lab Orders</a></li>
+                      <li><a href="#" class="nav-link">Billing</a></li>
+                    </ul>
+                  </li>
+
+                  <!-- IPD Management -->
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#ipdMenu"
+                      aria-expanded="false"
+                      aria-controls="ipdMenu"
+                    >
+                      IPD Management
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="ipdMenu"
+                      data-bs-parent="#charts"
+                      style="list-style: none"
+                    >
+                      <li><a href="#" class="nav-link">Add Patient</a></li>
+                      <li><a href="#" class="nav-link">View Patient</a></li>
+                      <li>
+                        <a href="#" class="nav-link">Ward/Bed Allocation</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link">Prescriptions</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link">Lab Orders</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link">Discharge Summary</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link">Billing</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#tables"
+                aria-expanded="false"
+                aria-controls="tables"
+              >
+                <span class="menu-title">Doctor’s Schedule</span>
+                <i class="fa fa-calendar-alt menu-icon"></i>
+              </a>
+              <div class="collapse" id="tables" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add Schedule</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">View Schedule </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#auth"
+                aria-expanded="false"
+                aria-controls="auth"
+              >
+                <span class="menu-title">Appointments</span>
+                <i class="fa fa-calendar-check menu-icon"></i>
+              </a>
+              <div class="collapse" id="auth" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> Add Appointments </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> View Appointments </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#caseManager"
+                aria-expanded="false"
+                aria-controls="caseManager"
+              >
+                <span class="menu-title">Case Manager</span>
+                <i class="fa fa-briefcase-medical menu-icon"></i>
+              </a>
+              <div class="collapse" id="caseManager" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add Case Study</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">View Case Study </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#bedManager"
+                aria-expanded="false"
+                aria-controls="bedManager"
+              >
+                <span class="menu-title">Bed Manager</span>
+
+                <i class="fa fa-bed menu-icon"></i>
+                <!-- <i class="fa-solid fa-bed-pulse"></i> -->
+              </a>
+              <div class="collapse" id="bedManager" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add New Bed</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Beds</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#reports"
+                aria-expanded="false"
+                aria-controls="reports"
+              >
+                <span class="menu-title">Reports</span>
+                <i class="fa fa-file-medical-alt menu-icon"></i>
+              </a>
+              <div class="collapse" id="reports" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#pathMenu"
+                      aria-expanded="false"
+                      aria-controls="pathMenu"
+                    >
+                      Pathology Reports
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="pathMenu"
+                      data-bs-parent="#reports"
+                      style="list-style: none"
+                    >
+                      <li><a href="#" class="nav-link">Add New Report</a></li>
+                      <li><a href="#" class="nav-link">Manage Reports</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#radMenu"
+                      aria-expanded="false"
+                      aria-controls="radMenu"
+                    >
+                      Radiology Reports
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="radMenu"
+                      data-bs-parent="#reports"
+                      style="list-style: none"
+                    >
+                      <li><a href="#" class="nav-link">Add New Report</a></li>
+                      <li><a href="#" class="nav-link">Manage Reports</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Birth Reports</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Death Reports</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#prescriptions"
+                aria-expanded="false"
+                aria-controls="prescriptions"
+              >
+                <span class="menu-title">Prescriptions</span>
+                <i class="fa fa-prescription-bottle-alt menu-icon"></i>
+              </a>
+              <div
+                class="collapse"
+                id="prescriptions"
+                data-bs-parent="#sidebar"
+              >
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add New Prescriptions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Prescriptions</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#pharmacy"
+                aria-expanded="false"
+                aria-controls="pharmacy"
+              >
+                <span class="menu-title">Pharmacy</span>
+                <i class="fa fa-pills menu-icon"></i>
+              </a>
+              <div class="collapse" id="pharmacy" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#invtMenu"
+                      aria-expanded="false"
+                      aria-controls="invtMenu"
+                    >
+                      Inventory
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="invtMenu"
+                      data-bs-parent="#pharmacy"
+                      style="list-style: none"
+                    >
+                      <li>
+                        <a href="#" class="nav-link">Add Medicine Stock</a>
+                      </li>
+                      <li><a href="#" class="nav-link">Manage Stock</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#prsMenu"
+                      aria-expanded="false"
+                      aria-controls="prsMenu"
+                    >
+                      Prescriptions
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="prsMenu"
+                      data-bs-parent="#pharmacy"
+                      style="list-style: none"
+                    >
+                      <li>
+                        <a href="#" class="nav-link">Manage Prescriptions</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#billMenu"
+                      aria-expanded="false"
+                      aria-controls="billMenu"
+                    >
+                      Billing
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="billMenu"
+                      data-bs-parent="#pharmacy"
+                      style="list-style: none"
+                    >
+                      <li><a href="#" class="nav-link">Generate Bill</a></li>
+                      <li><a href="#" class="nav-link">Manage Bills</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#ordMenu"
+                      aria-expanded="false"
+                      aria-controls="ordMenu"
+                    >
+                      Orders
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="ordMenu"
+                      data-bs-parent="#pharmacy"
+                      style="list-style: none"
+                    >
+                      <li>
+                        <a href="#" class="nav-link">Internal Requisitions</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link"
+                          >External Supplier Orders</a
+                        >
+                      </li>
+                      <li><a href="#" class="nav-link">Manage Orders</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#repMenu"
+                      aria-expanded="false"
+                      aria-controls="repMenu"
+                    >
+                      Reports
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="repMenu"
+                      data-bs-parent="#pharmacy"
+                      style="list-style: none"
+                    >
+                      <li><a href="#" class="nav-link">Stock Report</a></li>
+                      <li>
+                        <a href="#" class="nav-link"
+                          >Dispensed Medicine Report</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link"
+                          >Returned Medicine Report</a
+                        >
+                      </li>
+                      <li><a href="#" class="nav-link">Revenue Report</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#insurance"
+                aria-expanded="false"
+                aria-controls="insurance"
+              >
+                <span class="menu-title">Insurance</span>
+                <i class="fa fa-shield-alt menu-icon"></i>
+              </a>
+              <div class="collapse" id="insurance" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#polMenu"
+                      aria-expanded="false"
+                      aria-controls="polMenu"
+                    >
+                      Policy Management
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="polMenu"
+                      data-bs-parent="#insurance"
+                      style="list-style: none"
+                    >
+                      <li>
+                        <a href="#" class="nav-link"
+                          >Add Insurance/Register Patient</a
+                        >
+                      </li>
+                      <li><a href="#" class="nav-link">Manage Insurance</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#claimMenu"
+                      aria-expanded="false"
+                      aria-controls="claimMenu"
+                    >
+                      Claims
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="claimMenu"
+                      data-bs-parent="#insurance"
+                      style="list-style: none"
+                    >
+                      <li><a href="#" class="nav-link">Add Claim</a></li>
+                      <li><a href="#" class="nav-link">Manage Claims</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#rpMenu"
+                      aria-expanded="false"
+                      aria-controls="rpMenu"
+                    >
+                      Report
+                    </a>
+                    <ul
+                      class="flex-column sub-menu collapse"
+                      id="rpMenu"
+                      data-bs-parent="#insurance"
+                      style="list-style: none"
+                    >
+                      <li>
+                        <a href="#" class="nav-link">Claim Summary / Report</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link"
+                          >Outstanding Claim Report</a
+                        >
+                      </li>
+                      <li><a href="#" class="nav-link">Approval Report</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#bloodBank"
+                aria-expanded="false"
+                aria-controls="bloodBank"
+              >
+                <span class="menu-title">Blood Bank</span>
+                <i class="fa fa-tint menu-icon"></i>
+              </a>
+              <div class="collapse" id="bloodBank" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add New Donor</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"
+                      >Manage Donors (Edit, Delete)</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add Stock</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"
+                      >Manage Stock (Edit, Delete, Request Stock)</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#finances"
+                aria-expanded="false"
+                aria-controls="finances"
+              >
+                <span class="menu-title">Finances</span>
+                <i class="fa fa-wallet menu-icon"></i>
+              </a>
+              <div class="collapse" id="finances" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add Invoice</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Invoices</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Financial Report</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#assetManagement"
+                aria-expanded="false"
+                aria-controls="assetManagement"
+              >
+                <span class="menu-title">Asset Management</span>
+                <i class="fa fa-cogs menu-icon"></i>
+              </a>
+              <div
+                class="collapse"
+                id="assetManagement"
+                data-bs-parent="#sidebar"
+              >
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add New Assets</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Assets</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#activities"
+                aria-expanded="false"
+                aria-controls="activities"
+              >
+                <span class="menu-title">Activities</span>
+                <i class="fa fa-tasks menu-icon"></i>
+              </a>
+              <div class="collapse" id="activities" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add New Birth Records</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Birth Records</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add Death Records</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Death Records</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#ambulanceManagement"
+                aria-expanded="false"
+                aria-controls="ambulanceManagement"
+              >
+                <span class="menu-title">Ambulance Management</span>
+                <i class="fa fa-ambulance menu-icon"></i>
+              </a>
+              <div
+                class="collapse"
+                id="ambulanceManagement"
+                data-bs-parent="#sidebar"
+              >
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add New Ambulance</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Ambulance</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#healthPackages"
+                aria-expanded="false"
+                aria-controls="healthPackages"
+              >
+                <span class="menu-title">Health Packages</span>
+                <i class="fa fa-heartbeat menu-icon"></i>
+              </a>
+              <div
+                class="collapse"
+                id="healthPackages"
+                data-bs-parent="#sidebar"
+              >
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add Health Packages</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Health Packages</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#noticeBoard"
+                aria-expanded="false"
+                aria-controls="noticeBoard"
+              >
+                <span class="menu-title">Notice Board</span>
+                <i class="fa fa-bullhorn menu-icon"></i>
+              </a>
+              <div class="collapse" id="noticeBoard" data-bs-parent="#sidebar">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add New Notice</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Notices</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="menu-title">Settings</span>
+                <i class="fa fa-cog menu-icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- ############################################################## -->
+
+            <div class="form-card">
+              <div class="form-header">
+                <i class="fa-solid fa-user-plus"></i>
+                <h3>Employee Registration Form</h3>
+              </div>
+
+              <form id="employeeForm" novalidate>
+                <div class="form-body">
+                  <!-- General Fields -->
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>First Name <span class="required">*</span></label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        class="form-control"
+                        placeholder="Enter First Name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Last Name</label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        class="form-control"
+                        placeholder="Enter Last Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Email <span class="required">*</span></label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="Enter Email"
+                        required
+                      />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Mobile No</label>
+                      <input
+                        type="text"
+                        id="mobileNo"
+                        class="form-control"
+                        placeholder="Enter Mobile No"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Username & Password -->
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Username</label>
+                      <input
+                        type="text"
+                        id="username"
+                        class="form-control"
+                        placeholder="Enter Username"
+                      />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Set Password</label>
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        placeholder="Enter Password"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Profile Picture</label>
+                      <input type="file" id="profilePic" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Gender</label>
+                      <select id="gender" class="form-control">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Date of Birth</label>
+                      <input type="date" id="dob" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Age</label>
+                      <input
+                        type="number"
+                        id="age"
+                        class="form-control"
+                        placeholder="Enter Age"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>ID Proof</label>
+                      <select id="idProof" class="form-control">
+                        <option>Aadhar Card</option>
+                        <option>PAN Card</option>
+                        <option>Passport</option>
+                        <option>Driving License</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Upload ID Proof</label>
+                      <input type="file" id="uploadId" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Joining Date</label>
+                      <input
+                        type="date"
+                        id="joiningDate"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Blood Group</label>
+                      <select id="bloodGroup" class="form-control">
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <h4>Address</h4>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Address Line 1</label>
+                      <input type="text" id="address1" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Address Line 2</label>
+                      <input type="text" id="address2" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <label>City</label>
+                      <input type="text" id="city" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>District</label>
+                      <input type="text" id="district" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>State</label>
+                      <input type="text" id="state" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>Pincode</label>
+                      <input type="text" id="pincode" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>Country</label>
+                      <select id="country" class="form-control">
+                        <option selected>India</option>
+                        <option>USA</option>
+                        <option>UK</option>
+                        <option>Canada</option>
+                        <option>Australia</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Role</label>
+                      <select id="role" class="form-control">
+                        <option>Select Role</option>
+                        <option>Doctor</option>
+                        <option>Receptionist</option>
+                        <option>Head Nurse</option>
+                        <option>Laboratorist</option>
+                        <option>Pharmacist</option>
+                        <option>Accountant</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Dynamic Role Fields -->
+                  <div id="roleFields"></div>
+                </div>
+
+                <div class="form-footer">
+                  <button type="reset" class="btn btn-reset">Reset</button>
+                  <button type="submit" class="btn btn-save">Register</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- ####################################################################### -->
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div
+              class="d-sm-flex justify-content-center justify-content-sm-between"
+            >
+              <span
+                class="text-muted text-center text-sm-left d-block d-sm-inline-block"
+                >Copyright © 2025 Hospital Management System. All rights
+                reserved.
+                <!-- <a href="#"> Terms of use</a
+                ><a href="#">Privacy Policy</a> -->
+              </span>
+              <span
+                class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"
+                >Designed and Developed by
+                <a
+                  href="https://kavyainfoweb.com/"
+                  target="_blank"
+                  style="text-decoration: none; color: rgb(2, 62, 62)"
+                  >Kavya Infoweb Pvt. Ltd.</a
+                ></span
+              >
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/chart.js/chart.umd.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="assets/vendors/moment/moment.min.js"></script>
+    <script src="assets/vendors/daterangepicker/daterangepicker.js"></script>
+    <script src="assets/vendors/chartist/chartist.min.js"></script>
+    <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="assets/js/jquery.cookie.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script th:src="@{assets/}" src="assets/js/todolist.js"></script>
+    <!-- endinject -->
+
+    <!-- JS Dependencies -->
+
+    <!-- Custom js for this page -->
+    <script src="assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sidebar minimize
+        document
+          .querySelectorAll('[data-bs-toggle="minimize"]')
+          .forEach(function (el) {
+            el.addEventListener("click", function () {
+              document.body.classList.toggle("sidebar-icon-only");
+            });
+          });
+
+        // Sidebar offcanvas (for mobile)
+        document
+          .querySelectorAll('[data-bs-toggle="offcanvas"]')
+          .forEach(function (el) {
+            el.addEventListener("click", function () {
+              document
+                .querySelector(".sidebar-offcanvas")
+                .classList.toggle("active");
+            });
+          });
+      });
+    </script>
+
+    <script>
+      (function () {
+        function isCollapsed() {
+          return (
+            document.body.classList.contains("sidebar-icon-only") ||
+            document.documentElement.classList.contains("sidebar-icon-only") ||
+            (document.querySelector(".container-scroller") &&
+              document
+                .querySelector(".container-scroller")
+                .classList.contains("sidebar-icon-only"))
+          );
+        }
+
+        function showCollapse(el) {
+          if (!el) return;
+          el.classList.add("show");
+          el.style.display = "block";
+          el.setAttribute("aria-expanded", "true");
+        }
+        function hideCollapse(el) {
+          if (!el) return;
+          el.classList.remove("show");
+          el.style.display = "none";
+          el.setAttribute("aria-expanded", "false");
+        }
+
+        function attachHoverHandlers() {
+          document
+            .querySelectorAll(".sidebar .nav .nav-item")
+            .forEach(function (item) {
+              if (item.__hover_attached) return;
+              item.__hover_attached = true;
+
+              var directCollapse = item.querySelector(":scope > .collapse");
+              if (directCollapse) {
+                item.addEventListener("mouseenter", function () {
+                  if (!isCollapsed()) return;
+                  item.classList.add("hover-open");
+                  showCollapse(directCollapse);
+
+                  directCollapse
+                    .querySelectorAll(".collapse")
+                    .forEach(function (c) {
+                      c.classList.remove("show");
+                      c.style.display = "none";
+                      c.style.position = "absolute";
+                      c.style.top = "0";
+                      c.style.left = directCollapse.offsetWidth + "px";
+                      c.style.width = directCollapse.offsetWidth + "px";
+                      c.style.zIndex = 10000;
+                    });
+                });
+
+                item.addEventListener("mouseleave", function () {
+                  if (!isCollapsed()) return;
+                  item.classList.remove("hover-open");
+                  hideCollapse(directCollapse);
+
+                  directCollapse
+                    .querySelectorAll(".collapse")
+                    .forEach(function (c) {
+                      hideCollapse(c);
+                    });
+                });
+
+                directCollapse
+                  .querySelectorAll(".nav-item")
+                  .forEach(function (child) {
+                    var innerCollapse =
+                      child.querySelector(":scope > .collapse");
+                    if (!innerCollapse) return;
+
+                    child.addEventListener("mouseenter", function () {
+                      if (!isCollapsed()) return;
+                      child.classList.add("hover-open");
+                      innerCollapse.style.position = "absolute";
+                      innerCollapse.style.top = "0";
+                      innerCollapse.style.left =
+                        directCollapse.offsetWidth - 1 + "px";
+                      innerCollapse.style.width =
+                        directCollapse.offsetWidth + "px";
+                      innerCollapse.style.zIndex = 11000;
+                      showCollapse(innerCollapse);
+                    });
+
+                    child.addEventListener("mouseleave", function () {
+                      if (!isCollapsed()) return;
+                      child.classList.remove("hover-open");
+                      hideCollapse(innerCollapse);
+                    });
+                  });
+              }
+            });
+
+          document.addEventListener(
+            "click",
+            function (e) {
+              var trigger = e.target.closest(
+                'a[data-bs-toggle="collapse"], [data-bs-target][data-bs-toggle="collapse"]'
+              );
+              if (!trigger) return;
+              if (isCollapsed()) {
+                e.preventDefault();
+                e.stopPropagation();
+              }
+            },
+            true
+          );
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          attachHoverHandlers();
+
+          var observer = new MutationObserver(function (muts) {
+            muts.forEach(function (m) {
+              if (m.attributeName === "class") {
+                if (!isCollapsed()) {
+                  document
+                    .querySelectorAll(".sidebar .collapse")
+                    .forEach(function (el) {
+                      el.classList.remove("show");
+                      el.style.display = "";
+                    });
+                  document
+                    .querySelectorAll(".sidebar .nav-item.hover-open")
+                    .forEach(function (el) {
+                      el.classList.remove("hover-open");
+                    });
+                } else {
+                  document
+                    .querySelectorAll(".sidebar .collapse")
+                    .forEach(function (el) {
+                      el.classList.remove("show");
+                      el.style.display = "none";
+                    });
+                }
+              }
+            });
+          });
+          observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["class"],
+          });
+        });
+      })();
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const roleSelect = document.getElementById("role");
+        const roleFields = document.getElementById("roleFields");
+
+        roleSelect.addEventListener("change", function () {
+          roleFields.innerHTML = "";
+
+          if (this.value === "Doctor") {
+            roleFields.innerHTML = `
+              <h4 style="margin-bottom:10px;">Doctor Details</h4>
+              <div class="form-row ">
+                <div class="form-group col-md-6">
+                  <label>Department</label>
+                  <select class="form-control">
+                    <option>Cardiology</option>
+                    <option>Neurology</option>
+                    <option>Orthopedics</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Specialization</label>
+                  <input type="text" class="form-control" placeholder="Enter Specialization">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Experience</label>
+                  <select class="form-control">
+                    <option>Select</option>
+                   <option>Interns</option>
+                    <option>1-3 years</option>
+                    <option>3-5 years</option>
+                    <option>More than 5 years</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>License Number</label>
+                  <input type="text" class="form-control" placeholder="Enter License Number">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Qualifications</label>
+                  <input type="text" class="form-control" placeholder="Enter Qualifications">
+                </div>
+              </div>
+            `;
+          } else if (this.value === "Receptionist") {
+            roleFields.innerHTML = `
+              <h4 style="margin-bottom:10px;">Receptionist Details</h4>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Experience</label>
+                  <select class="form-control">
+                    <option>Select</option>
+                     <option>Interns</option>
+                    <option>1-3 years</option>
+                    <option>3-5 years</option>
+                    <option>More than 5 years</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Qualifications</label>
+                  <input type="text" class="form-control" placeholder="Enter Qualifications">
+                </div>
+              </div>
+            `;
+          } else if (this.value === "Head Nurse") {
+            roleFields.innerHTML = `
+              <h4 style="margin-bottom:10px;">Head Nurse Details</h4>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Experience</label>
+                  <select class="form-control">
+                  <option>Select</option>
+                     <option>Interns</option>
+                    <option>1-3 years</option>
+                    <option>3-5 years</option>
+                    <option>More than 5 years</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Qualifications</label>
+                  <input type="text" class="form-control" placeholder="Enter Qualifications">
+                </div>
+              </div>
+            `;
+          } else if (this.value === "Laboratorist") {
+            roleFields.innerHTML = `
+              <h4 style="margin-bottom:10px;">Laboratorist Details</h4>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Category</label>
+                  <select class="form-control">
+                    <option>Pathlab</option>
+                    <option>Radiology</option>
+                    <option>Microbiology</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Experience</label>
+                  <select class="form-control">
+                   <option>Select</option>
+                     <option>Interns</option>
+                    <option>1-3 years</option>
+                    <option>3-5 years</option>
+                    <option>More than 5 years</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label>Qualifications</label>
+                  <input type="text" class="form-control" placeholder="Enter Qualifications">
+                </div>
+              </div>
+            `;
+          } else if (
+            this.value === "Pharmacist" ||
+            this.value === "Accountant"
+          ) {
+            roleFields.innerHTML = `
+              <h4 style="margin-bottom:10px;">${this.value} Details</h4>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Experience</label>
+                  <select class="form-control">
+                    <option>Select</option>
+                     <option>Interns</option>
+                    <option>1-3 years</option>
+                    <option>3-5 years</option>
+                    <option>More than 5 years</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Qualifications</label>
+                  <input type="text" class="form-control" placeholder="Enter Qualifications">
+                </div>
+              </div>
+            `;
+          }
+        });
+
+        // Save form data
+        const form = document.getElementById("employeeForm");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const data = {
+            firstName: document.getElementById("firstName")?.value || "",
+            lastName: document.getElementById("lastName")?.value || "",
+            email: document.getElementById("email")?.value || "",
+            username: document.getElementById("username")?.value || "",
+            password: document.getElementById("password")?.value || "",
+            mobileNo: document.getElementById("mobileNo")?.value || "",
+            gender: document.getElementById("gender")?.value || "",
+            dob: document.getElementById("dob")?.value || "",
+            age: document.getElementById("age")?.value || "",
+            idProof: document.getElementById("idProof")?.value || "",
+            joiningDate: document.getElementById("joiningDate")?.value || "",
+            bloodGroup: document.getElementById("bloodGroup")?.value || "",
+            address1: document.getElementById("address1")?.value || "",
+            address2: document.getElementById("address2")?.value || "",
+            city: document.getElementById("city")?.value || "",
+            district: document.getElementById("district")?.value || "",
+            state: document.getElementById("state")?.value || "",
+            pincode: document.getElementById("pincode")?.value || "",
+            country: document.getElementById("country")?.value || "",
+            role: document.getElementById("role")?.value || "",
+          };
+
+          console.log("Form Data Submitted: ", data);
+          alert("Form submitted successfully! Check console for details.");
+        });
+      });
+    </script>
+    <!-- <script src="./assets/js/Prescription-Table.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,87 @@
+body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-fluid {
+    margin-top: 30px;
+}
+
+table.dataTable thead th {
+    background-color: #e9ecef;
+}
+
+/* Action button icons */
+.action-btns i {
+    font-size: 18px;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+.action-btns i.fa-eye {
+    color: #28a745;
+    /* View */
+}
+
+.action-btns i.fa-edit {
+    color: #007bff;
+    /* Update */
+}
+
+.action-btns i.fa-trash {
+    color: #dc3545;
+    /* Delete */
+}
+
+.dtr-details {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+table.dataTable th,
+table.dataTable td {
+    padding: 15px !important;
+    vertical-align: middle;
+}
+
+/* ✅ Mobile responsive tweaks */
+@media (max-width: 768px) {
+    table.dataTable thead {
+        display: none;
+        /* hide header on small screens */
+    }
+
+    table.dataTable tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        background: #fff;
+        padding: 10px;
+    }
+
+    table.dataTable tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px !important;
+        font-size: 14px;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    table.dataTable tbody td:last-child {
+        border-bottom: none;
+    }
+
+    /* Action buttons adjust */
+    .action-btns {
+        text-align: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .action-btns i {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+}

@@ -1,0 +1,23 @@
+/* body {
+      background-color: #f8f9fa;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    } */
+
+    .container-fluid {
+      margin-top: 30px;
+    }
+
+    table.dataTable thead th {
+      background-color: #eaefe9;
+    }
+
+    table.dataTable th,
+    table.dataTable td {
+      padding: 15px !important;
+      vertical-align: middle;
+    }
+
+    .action-icons i {
+      cursor: pointer;
+      margin-right: 10px;
+    }

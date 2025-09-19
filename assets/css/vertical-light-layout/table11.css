@@ -1,0 +1,36 @@
+ body {
+     background-color: #f8f9fa;
+     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+     margin-top: 30px;
+ }
+
+ .card-header {
+     background-color: #17a2b8;
+     color: white;
+ }
+
+ .action-icons i {
+     cursor: pointer;
+     margin-right: 10px;
+     font-size: 1.1rem;
+ }
+
+ .action-icons i:hover {
+     opacity: 0.8;
+ }
+
+ table.dataTable thead th {
+     background-color: #e9ecef;
+ }
+
+ table.dataTable th,
+ table.dataTable td {
+     padding: 15px !important;
+     vertical-align: middle;
+ }
+
+ @media screen and (max-width: 600px) {
+     .content-wrapper {
+         padding: 0;
+     }
+ }

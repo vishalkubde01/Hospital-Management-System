@@ -1,0 +1,45 @@
+body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-fluid {
+    margin-top: 30px;
+}
+
+table.dataTable thead th {
+    background-color: #e9ecef;
+}
+
+/* Remove bullets for responsive row details */
+.dtr-details {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Action icons */
+.action-icons i {
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Table padding */
+table.dataTable th,
+table.dataTable td {
+    padding: 11px !important;
+    vertical-align: middle;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .content-wrapper {
+        padding: 0px;
+    }
+
+    table.dataTable td {
+        white-space: normal !important;
+        word-break: break-word;
+    }
+}
